@@ -1,0 +1,62 @@
+PROG foo2
+FUNC foo (II)V
+{
+    TEMP 0:I       [P("x")];
+    TEMP 1:I       [P("y")];
+    TEMP 2:I       [L("z")];
+    TEMP 3:I   ;
+    TEMP 4:I   ;
+    TEMP 5:I   ;
+    TEMP 6:I   ;
+    TEMP 7:I   ;
+    TEMP 8:I   ;
+    TEMP 9:Z   ;
+
+    T3 := 7;
+    T4 := T3 I* T1;
+    T5 := T0 I+ T4;
+    T6 := 2;
+    T7 := T5 I+ T6;
+    T2 := T7;
+    T8 := T0 I+ T1;
+    T2 := T8;
+    T9 := T0 I== T1;
+    RETURN ;
+}
+FUNC foo2 (FF)V
+{
+    TEMP 0:F       [P("x")];
+    TEMP 1:F       [P("y")];
+    TEMP 2:F       [L("z")];
+    TEMP 3:F   ;
+    TEMP 4:F   ;
+    TEMP 5:F   ;
+    TEMP 6:F   ;
+    TEMP 7:F   ;
+    TEMP 8:F   ;
+
+    T3 := 7.0;
+    T4 := T3 F* T1;
+    T5 := T0 F+ T4;
+    T6 := 2.0;
+    T7 := T5 F+ T6;
+    T2 := T7;
+    T8 := T0 F+ T1;
+    T2 := T8;
+    RETURN ;
+}
+FUNC main ()V
+{
+    TEMP 0:I   ;
+    TEMP 1:I   ;
+    TEMP 2:F   ;
+    TEMP 3:F   ;
+
+    T0 := 2;
+    T1 := 4;
+    CALL foo(T0T1);
+    T2 := 2.0;
+    T3 := 9.0;
+    CALL foo2(T2T3);
+    RETURN ;
+}

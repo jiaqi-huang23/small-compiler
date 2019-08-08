@@ -1,0 +1,65 @@
+PROG types
+FUNC main ()V
+{
+    TEMP 0:I       [L("x")];
+    TEMP 1:F       [L("y")];
+    TEMP 2:Z       [L("z")];
+    TEMP 3:AI      [L("arr")];
+    TEMP 4:U       [L("str")];
+    TEMP 5:C       [L("c")];
+    TEMP 6:AU      [L("str_arr")];
+    TEMP 7:I   ;
+    TEMP 8:F   ;
+    TEMP 9:Z   ;
+    TEMP 10:I   ;
+    TEMP 11:I   ;
+    TEMP 12:U   ;
+    TEMP 13:I   ;
+    TEMP 14:U   ;
+    TEMP 15:I   ;
+    TEMP 16:U   ;
+    TEMP 17:C   ;
+    TEMP 18:I   ;
+    TEMP 19:I   ;
+    TEMP 20:I   ;
+    TEMP 21:U   ;
+    TEMP 22:I   ;
+    TEMP 23:U   ;
+
+    T3 := NEWARRAY I 10;
+    T6 := NEWARRAY U 2;
+    T7 := 1;
+    T0 := T7;
+    T8 := 2.0;
+    T1 := T8;
+    T9 := TRUE;
+    T2 := T9;
+    T10 := 1;
+    T11 := 1;
+    T3[T10] := T11;
+    T12 := "I am a string";
+    T4 := T12;
+    T13 := 0;
+    T14 := "index 0";
+    T6[T13] := T14;
+    T15 := 1;
+    T16 := "index 2";
+    T6[T15] := T16;
+    T17 := 'e';
+    T5 := T17;
+    PRINTLNI T0;
+    PRINTLNF T1;
+    PRINTLNZ T2;
+    T18 := 1;
+    T19 := T3[T18];
+    PRINTLNI T19;
+    PRINTLNU T4;
+    T20 := 0;
+    T21 := T6[T20];
+    PRINTLNU T21;
+    T22 := 1;
+    T23 := T6[T22];
+    PRINTLNU T23;
+    PRINTLNC T5;
+    RETURN ;
+}

@@ -1,0 +1,49 @@
+//op : +, -, *
+int foo(int a, int b) {
+	println "foo";
+	int c;
+	int d;
+
+	c = a + b;
+	d = a * b + 1;
+	print "c ";
+	println c;
+	print "d";
+	println d;
+
+	c = a * b - d;
+	println c;
+
+	return c;
+}
+
+//op: <, ==
+int foo1(float f, int a) {
+	println "foo1";
+	int b;
+	float c;
+
+	c = 1.1;
+	b = 2;
+
+	if (b < a) {
+		b = a;
+	} else {
+		c = f;
+	}
+
+	println a;
+	println f;
+	println b;
+	println c;
+
+	return b;
+}
+
+void main() {
+	println "Main";
+	println "returned from foo";
+	println foo(1,2);
+	println "returned from foo1";
+	println foo1(10.9,4);
+}

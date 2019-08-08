@@ -1,0 +1,99 @@
+PROG ops
+FUNC foo (II)I
+{
+    TEMP 0:I       [P("a")];
+    TEMP 1:I       [P("b")];
+    TEMP 2:I       [L("c")];
+    TEMP 3:I       [L("d")];
+    TEMP 4:U   ;
+    TEMP 5:I   ;
+    TEMP 6:I   ;
+    TEMP 7:I   ;
+    TEMP 8:I   ;
+    TEMP 9:U   ;
+    TEMP 10:U   ;
+    TEMP 11:I   ;
+    TEMP 12:I   ;
+
+    T4 := "foo";
+    PRINTLNU T4;
+    T5 := T0 I+ T1;
+    T2 := T5;
+    T6 := T0 I* T1;
+    T7 := 1;
+    T8 := T6 I+ T7;
+    T3 := T8;
+    T9 := "c ";
+    PRINTU T9;
+    PRINTLNI T2;
+    T10 := "d";
+    PRINTU T10;
+    PRINTLNI T3;
+    T11 := T0 I* T1;
+    T12 := T11 I- T3;
+    T2 := T12;
+    PRINTLNI T2;
+    RETURN T2;
+    RETURN ;
+}
+FUNC foo1 (FI)I
+{
+    TEMP 0:F       [P("f")];
+    TEMP 1:I       [P("a")];
+    TEMP 2:I       [L("b")];
+    TEMP 3:F       [L("c")];
+    TEMP 4:U   ;
+    TEMP 5:F   ;
+    TEMP 6:I   ;
+    TEMP 7:Z   ;
+    TEMP 8:Z   ;
+
+    T4 := "foo1";
+    PRINTLNU T4;
+    T5 := 1.1;
+    T3 := T5;
+    T6 := 2;
+    T2 := T6;
+    T7 := T2 I< T1;
+    T8 := Z! T7;
+    IF T8 GOTO L0;
+    T2 := T1;
+    GOTO L1;
+L0:;
+    T3 := T0;
+L1:;
+    PRINTLNI T1;
+    PRINTLNF T0;
+    PRINTLNI T2;
+    PRINTLNF T3;
+    RETURN T2;
+    RETURN ;
+}
+FUNC main ()V
+{
+    TEMP 0:U   ;
+    TEMP 1:U   ;
+    TEMP 2:I   ;
+    TEMP 3:I   ;
+    TEMP 4:I   ;
+    TEMP 5:U   ;
+    TEMP 6:F   ;
+    TEMP 7:I   ;
+    TEMP 8:I   ;
+
+    T0 := "Main";
+    PRINTLNU T0;
+    T1 := "returned from foo";
+    PRINTLNU T1;
+    T2 := 1;
+    T3 := 2;
+    T4 := CALL foo(T2T3);
+    PRINTLNI T4;
+    T5 := "returned from foo1";
+    PRINTLNU T5;
+    T6 := 10.9;
+    T7 := 4;
+    T8 := CALL foo1(T6T7);
+    PRINTLNI T8;
+    RETURN ;
+}

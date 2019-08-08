@@ -1,0 +1,41 @@
+int foo(int c) {
+	int a;
+	int b;
+
+	a = 0;
+	b = 10;
+
+	while (a < b) {
+		a = c + 1;
+		println a;
+	}
+
+	return a;
+}
+
+//nested loop
+int foo1() {
+	int a;
+	int b;
+
+	a = 1;
+	b = 1111;
+
+	while (a < b) {
+		b = b - 1;
+		while (a < 2000) {
+			println a;
+			println b;
+			a = a + b + 100;
+		}
+	}
+
+	return a;
+}
+
+void main() {
+	println foo(8);
+	println foo1();
+
+	println foo() + foo1();
+}

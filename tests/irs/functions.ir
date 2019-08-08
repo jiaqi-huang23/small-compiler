@@ -1,0 +1,118 @@
+PROG functions
+FUNC same (UU)Z
+{
+    TEMP 0:U       [P("a")];
+    TEMP 1:U       [P("b")];
+    TEMP 2:Z   ;
+    TEMP 3:Z   ;
+    TEMP 4:Z   ;
+    TEMP 5:Z   ;
+
+    T2 := T0 U== T1;
+    T3 := Z! T2;
+    IF T3 GOTO L0;
+    T4 := TRUE;
+    RETURN T4;
+    GOTO L1;
+L0:;
+L1:;
+    T5 := FALSE;
+    RETURN T5;
+    RETURN ;
+}
+FUNC arr (AI)I
+{
+    TEMP 0:AI      [P("a")];
+    TEMP 1:I   ;
+    TEMP 2:I   ;
+    TEMP 3:I   ;
+    TEMP 4:Z   ;
+    TEMP 5:Z   ;
+    TEMP 6:I   ;
+    TEMP 7:I   ;
+    TEMP 8:I   ;
+    TEMP 9:I   ;
+
+    T1 := 2;
+    T2 := T0[T1];
+    T3 := 0;
+    T4 := T2 I< T3;
+    T5 := Z! T4;
+    IF T5 GOTO L0;
+    T6 := 1;
+    T7 := T0[T6];
+    RETURN T7;
+    GOTO L1;
+L0:;
+L1:;
+    T8 := 0;
+    T9 := T0[T8];
+    RETURN T9;
+    RETURN ;
+}
+FUNC recur (I)I
+{
+    TEMP 0:I       [P("b")];
+    TEMP 1:I   ;
+    TEMP 2:Z   ;
+    TEMP 3:Z   ;
+    TEMP 4:I   ;
+    TEMP 5:I   ;
+    TEMP 6:I   ;
+    TEMP 7:I   ;
+
+    T1 := 3;
+    T2 := T0 I== T1;
+    T3 := Z! T2;
+    IF T3 GOTO L0;
+    RETURN T0;
+    GOTO L1;
+L0:;
+L1:;
+    T4 := 1;
+    T5 := T0 I+ T4;
+    T6 := CALL recur(T5);
+    T7 := T0 I+ T6;
+    RETURN T7;
+    RETURN ;
+}
+FUNC main ()V
+{
+    TEMP 0:AI      [L("a")];
+    TEMP 1:U   ;
+    TEMP 2:U   ;
+    TEMP 3:Z   ;
+    TEMP 4:I   ;
+    TEMP 5:I   ;
+    TEMP 6:I   ;
+    TEMP 7:I   ;
+    TEMP 8:I   ;
+    TEMP 9:I   ;
+    TEMP 10:I   ;
+    TEMP 11:U   ;
+    TEMP 12:I   ;
+    TEMP 13:I   ;
+
+    T0 := NEWARRAY I 3;
+    T1 := "abc";
+    T2 := "abc";
+    T3 := CALL same(T1T2);
+    PRINTLNZ T3;
+    T4 := 0;
+    T5 := 0;
+    T0[T4] := T5;
+    T6 := 1;
+    T7 := 1;
+    T0[T6] := T7;
+    T8 := 2;
+    T9 := 2;
+    T0[T8] := T9;
+    T10 := CALL arr(T0);
+    PRINTLNI T10;
+    T11 := "recursive";
+    PRINTLNU T11;
+    T12 := 0;
+    T13 := CALL recur(T12);
+    PRINTLNI T13;
+    RETURN ;
+}

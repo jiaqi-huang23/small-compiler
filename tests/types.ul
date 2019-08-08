@@ -1,0 +1,27 @@
+void main() {
+	int x;
+	float y;
+	boolean z;
+	int[10] arr;
+	string str;
+	char c;
+	string[2] str_arr;
+
+	x = 1;
+	y = 2.0;
+	z = true;
+	arr[1] = 1;
+	str = "I am a string";
+	str_arr[0] = "index 0";
+	str_arr[1] = "index 2";
+	c = 'e';
+
+	println x;
+	println y;
+	println z;
+	println arr[1];
+	println str;
+	println str_arr[0];
+	println str_arr[1];
+	println c;
+}

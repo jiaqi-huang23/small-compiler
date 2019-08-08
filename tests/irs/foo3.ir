@@ -1,0 +1,33 @@
+PROG foo3
+FUNC main ()V
+{
+    TEMP 0:I       [L("x")];
+    TEMP 1:I       [L("y")];
+    TEMP 2:I   ;
+    TEMP 3:I   ;
+    TEMP 4:Z   ;
+    TEMP 5:Z   ;
+    TEMP 6:I   ;
+    TEMP 7:I   ;
+    TEMP 8:I   ;
+    TEMP 9:I   ;
+
+    T2 := 10;
+    T0 := T2;
+    T3 := 1;
+    T1 := T3;
+L0:;
+    T4 := T1 I< T0;
+    T5 := Z! T4;
+    IF T5 GOTO L1;
+    T6 := 1;
+    T7 := T1 I+ T6;
+    T1 := T7;
+    PRINTLNI T1;
+    GOTO L0;
+L1:;
+    T8 := 10;
+    T9 := T0 I+ T8;
+    T0 := T9;
+    RETURN ;
+}

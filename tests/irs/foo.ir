@@ -1,0 +1,41 @@
+PROG foo
+FUNC foo (II)I
+{
+    TEMP 0:I       [P("x")];
+    TEMP 1:I       [P("y")];
+    TEMP 2:F       [L("z")];
+    TEMP 3:U       [L("p")];
+    TEMP 4:C       [L("c")];
+    TEMP 5:AI      [L("w")];
+    TEMP 6:C   ;
+    TEMP 7:I   ;
+    TEMP 8:U   ;
+    TEMP 9:F   ;
+    TEMP 10:I   ;
+
+    T5 := NEWARRAY I 3;
+    T6 := 'A';
+    T4 := T6;
+    T7 := 7;
+    T0 := T7;
+    T8 := "Hi there";
+    T3 := T8;
+    T9 := 3.732;
+    T2 := T9;
+    T1 := T0;
+    T10 := 8;
+    RETURN T10;
+    RETURN ;
+}
+FUNC main ()V
+{
+    TEMP 0:I   ;
+    TEMP 1:I   ;
+    TEMP 2:I   ;
+
+    T0 := 2;
+    T1 := 2;
+    T2 := CALL foo(T0T1);
+    PRINTLNI T2;
+    RETURN ;
+}
